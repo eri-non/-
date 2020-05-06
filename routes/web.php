@@ -15,11 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('XXX', 'Admin\NewsController@add');
+// Route::get('XXXXX/XXX', 'Admin\AAAController@bbb');
 
 Route::group(['prefix' => 'admin'], function(){
-    Route::get('news/admin', 'Admin\NewsController@adit');
-    Route::get('profile/profile', 'Admin\ProfileController@adit');
+    Route::get('news/create', 'Admin\NewsController@add');
+    Route::get('news/delete', 'Admin\NewsController@delete');
+    Route::get('news/update', 'Admin\NewsController@update');
+    Route::get('profile/create', 'Admin\ProfileController@create');
     Route::get('profile/edit', 'Admin\ProfileController@edit');
 });
 
